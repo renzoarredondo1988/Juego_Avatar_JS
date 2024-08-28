@@ -17,13 +17,26 @@
     <div class="contenedor-h1">
         <h1>AVATAR 🔥💧🌱🌪️</h1> <!--Esto es estatico, NO cambia, el h1 se utiliza una vez-->
     </div>
+    
+    <div id="botones-regla-jugar">
+        
+        <div>
+            <button type="button" id="reglas">REGLAS DEL JUEGO</button>
+        </div>
+    
+        <div id="boton-jugar">
+    
+            <button type="button" id="jugar">JUGAR</button>
+        </div>
+    </div>
+
+
 
 
     <!-- ---------- Reglas -------------------------------->
-    <div class="contenedor-reglas">
-        <center>
-
-
+    <div id="contenedor-reglas">
+    
+        <section>
             <h1>Reglas del juego</h1>
             <strong>1. Se debe elegir un personaje</strong>
             <br>
@@ -34,7 +47,14 @@
             <li>Puño le gana a Barrida</li>
             <li>Patada le gana a Puño</li>
             <li>Barrida le gana a Barrida</li>
-        </center>
+        </section>
+    
+    
+        <div id="volver">
+    
+            <button type="button" id="volver-inicio">VOLVER AL INICIO</button>
+        </div>
+    
     </div>
 
 
@@ -44,67 +64,113 @@
 
 
 
-
-    <div>
-        <section id="seleccionar-personaje">
-            <h2>Elige tu Personaje</h2>
-
-    </div>
-
-    <div class="contenedor-padre-seleccion">
-    
-        <div class="contenedor-seleccion">
-    
-            <figure>
-    
-    
-                <img src="imagenes/zuko.png" alt="Personaje zuko">
-                <figcaption>
-                    <label for="zuko">Zuko</label>
-                    <!--Esta etiqueta es para darle un indicador a los usuarios de que están seleccionando-->
-                    <input type="radio" name="personaje" id="zuko" />
-                    <!-- name es para agrupar todos los imputs y poder seleccionar-->
-                </figcaption>
-            </figure>
-    
-    
-            <figure>
-                <img src="imagenes/katara.jpg" alt="Personaje Katara">
-                <figcaption>
-                    <label for="katara">Katara</label>
-                    <!--El atributo for ayuda a vincular un label con un imput a través del mismo id-->
-                    <input type="radio" name="personaje" id="katara" /> <!--Acá van los personajes-->
-                </figcaption>
-            </figure>
-    
-            <figure>
-                <img src="imagenes/aang.jpg" alt="Personaje aang">
-                <figcaption>
-                    <label for="aang">Aang</label>
-                    <input type="radio" name="personaje" id="aang" />
-                    <!--Le damos un atributo id para saber cual es el valor de cada uno-->
-                </figcaption>
-            </figure>
-    
-            <figure>
-                <img src="imagenes/toph.jpg" alt="Personaje toph">
-                <figcaption>
-                    <label for="toph">Toph</label>
-                    <input type="radio" name="personaje" id="toph" />
-                </figcaption>
-            </figure>
+    <div id="elige-personaje">
+        <div>
+            <section id="seleccionar-personaje">
+                <h2>Elige tu Personaje</h2>
     
         </div>
     
-    </div>
+        <div class="contenedor-padre-seleccion">
     
-    <button id="boton-personaje">Seleccionar</button> <!-- El botón para seleccionar el personaje-->
-    </section>
+            <div class="contenedor-seleccion">
+    
+                <figure>
+    
+    
+                    <img id="zuko" src="imagenes/zuko.png" alt="Personaje zuko">
+                    <figcaption>
+                        <label for="zuko">Zuko</label>
+                        <!--Esta etiqueta es para darle un indicador a los usuarios de que están seleccionando-->
+                        
+                    </figcaption>
+                </figure>
+    
+    
+                <figure>
+                    <img id="katara" src="imagenes/katara.jpg" alt="Personaje Katara">
+                    <figcaption>
+                        <label for="katara">Katara</label>
+                     
+                    </figcaption>
+                </figure>
+    
+                <figure>
+                    <img id="aang" src="imagenes/aang.jpg" alt="Personaje aang">
+                    <figcaption>
+                        <label for="aang">Aang</label>
+                        
+                    </figcaption>
+                </figure>
+    
+                <figure>
+                    <img id="toph" src="imagenes/toph.jpg" alt="Personaje toph">
+                    <figcaption>
+                        <label for="toph">Toph</label>
+                        
+                    </figcaption>
+                </figure>
+    
+            </div>
+    
+        </div>
+    
+   
+        </section>
+    </div>
 
 
-
+<!--Seccion lucha, vamos a hacer algunas modificaciones de enfoque-->
 
     <section id="seleccionar-ataque">
+
+        <div id="tu-vs-enemigo">
+
+            <figure >
+
+                <div id="tu-personaje">
+
+
+                </div>
+
+                <figcaption id="tu-personaje-seleccionado">
+
+                    <p><span id="personaje-jugador"></span></p>
+                </figcaption>
+
+            </figure>
+
+
+            <figure >
+
+                <div id="personaje-enemigo">
+
+
+                </div>
+
+                <figcaption id="personaje-enemigo-seleccionado">
+
+                    <p><span id="personaje-enemigo"></span></p>
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
         <h2>Elige tu ataque</h2> <!--Se puede utilizar varias veces-->
         <p>Tu personaje <span id="personaje-jugador"></span> Tiene <span id="vidas-jugador">3</span> vidas</p>
         <!--Pero esto debe ser dinamico, necesitamos que cambie-->

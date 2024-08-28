@@ -5,6 +5,15 @@ let ataqueEnemigo; //Variables globales
 let vidasJugador = 3;
 let vidasEnemigo = 3;
 
+let sectionContenedorReglas;
+let sectionEligePersonaje;
+
+let botonReglas;
+let botonJugar;
+
+let botonesIniciales;
+
+
 function iniciarJuego(){
     //Ocultamos la seleccion de ataque para que el usuario solo pueda ver la seleccion de jugador
     let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque");
@@ -13,49 +22,99 @@ function iniciarJuego(){
     let sectionReiniciar = document.getElementById("reiniciar")
     sectionReiniciar.style.display = 'none';
 
-    let botonPersonajeJugador = document.getElementById('boton-personaje');
-    botonPersonajeJugador.addEventListener('click', seleccionarPersonajeJugador);
+    sectionContenedorReglas=document.getElementById("contenedor-reglas");
+    sectionContenedorReglas.style.display="none";
 
-    let botonPunio = document.getElementById('boton-punio');
-    botonPunio.addEventListener('click', ataquePunio);
-    let botonPatada = document.getElementById('boton-patada');
-    botonPatada.addEventListener('click', ataquePatada);
-    let botonBarrida = document.getElementById('boton-barrida');
-    botonBarrida.addEventListener('click', ataqueBarrida);
-    let botonReiniciar = document.getElementById("boton-reiniciar");
-    botonReiniciar.addEventListener('click', reiniciarJuego)
+    sectionEligePersonaje=document.getElementById("elige-personaje");
+    sectionEligePersonaje.style.display="none";
+
+    botonesIniciales=document.getElementById("botones-regla-jugar");
+    botonesIniciales.style.display="block";
+
 
     //Tenemos que esconder las otras partes del juego
+    botonVerReglas();
+    botonJuego();
+    
 }
 
-function seleccionarPersonajeJugador(){ //tarea agregar activad a la funcion al alegir el personaje
-    //Una vez seleccionado el personaje ocultamos esta parte para que el usuario se enfoque en los ataques
-    let botonPersonajeJugador = document.getElementById("seleccionar-personaje");
-    botonPersonajeJugador.style.display = 'none';
+function botonVerReglas(){
+
+    botonReglas=document.getElementById('reglas');
+    botonReglas.addEventListener('click',verReglas);
     
+
+}
+
+function verReglas(){
+
+    botonesIniciales.style.display="none";
+   // sectionContenedorReglas=document.getElementById("contenedor-reglas");
+    sectionContenedorReglas.style.display="block";
+    volverInicio();
+}
+
+function volverInicio(){
+    let botonVolverInicio=document.getElementById("volver-inicio");
+    botonVolverInicio.addEventListener('click',iniciarJuego);
+}
+
+
+
+function botonJuego(){
+    botonJugar=document.getElementById("jugar");
+    botonJugar.addEventListener('click',Jugar);
+
+
+}
+
+
+
+
+function Jugar(){
+    botonesIniciales.style.display="none";
+  //  sectionEligePersonaje=document.getElementById("elige-personaje");
+    sectionEligePersonaje.style.display="block";
+    eligePersonaje();
+
+
+}
+
+function eligePersonaje(){
+
+
     let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque");
     sectionSeleccionarAtaque.style.display = 'block';
 
-    let inputZuko = document.getElementById('zuko').checked;
-    let inputKatara = document.getElementById('katara').checked;
-    let inputAang = document.getElementById('toph').checked;
-    let inputToph = document.getElementById('aang').checked;
+    document.getElementById('zuko').addEventListener('click', function() {
+        asignacionPersonajeJugador('Zuko');
+    });
+
+    document.getElementById('katara').addEventListener('click', function() {
+        asignacionPersonajeJugador('Katara');
+    });
+
+    document.getElementById('aang').addEventListener('click', function() {
+        asignacionPersonajeJugador('Aang');
+    });
+
+    document.getElementById('toph').addEventListener('click', function() {
+        asignacionPersonajeJugador('Toph');
+    });
+    
+}
+
+
+
+
+
+function asignacionPersonajeJugador(personaje){
+
+    let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque");
+    sectionSeleccionarAtaque.style.display = 'block';
 
     let personajeJugador = document.getElementById('personaje-jugador');
-
-    if(inputZuko){
-        // alert("SELECCIONASTE TU PERSONAJE ZUKO");
-        personajeJugador.innerHTML = 'Zuko';
-    }else if(inputKatara){
-        // alert("SELECCIONASTE TU PERSONAJE KATARA");
-        personajeJugador.innerHTML = 'Katara';
-    }else if(inputToph){
-        // alert("SELECCIONASTE TU PERSONAJE TOPH");
-        personajeJugador.innerHTML = 'Aang';
-    }else if(inputAang){
-        // alert("SELECCIONASTE TU PERSONAJE AANG");
-        personajeJugador.innerHTML = 'Toph';
-    }
+    personajeJugador.innerHTML = personaje;
 
     seleccionarPersonajeEnemigo()
 }
@@ -80,7 +139,31 @@ function seleccionarPersonajeEnemigo(){
     }else if(random === 3){
         personajeEnemigo.innerHTML = 'Toph';
     }
+
+    ataque();
 }
+
+function ataque(){
+
+    sectionEligePersonaje.style.display="none";
+
+    let botonPunio = document.getElementById('boton-punio');
+    botonPunio.addEventListener('click', ataquePunio);
+    let botonPatada = document.getElementById('boton-patada');
+    botonPatada.addEventListener('click', ataquePatada);
+    let botonBarrida = document.getElementById('boton-barrida');
+    botonBarrida.addEventListener('click', ataqueBarrida);
+    let botonReiniciar = document.getElementById("boton-reiniciar");
+    botonReiniciar.addEventListener('click', reiniciarJuego)
+}
+
+
+
+
+
+
+
+
 
 
 function ataquePunio(){//modificamos la variable global ataqueJugador
