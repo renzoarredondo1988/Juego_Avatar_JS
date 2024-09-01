@@ -13,6 +13,27 @@ let botonJugar;
 
 let botonesIniciales;
 
+let imagenZuko= new Image();
+imagenZuko.src='imagenes/zuko.png';
+imagenZuko.alt="Imagen Zuko";
+
+let imagenKatara=new Image();
+imagenKatara.src='imagenes/katara.jpg';
+imagenKatara.alt='Imagen Katara';
+
+let imagenAang=new Image();
+imagenAang.src="imagenes/aang.jpg";
+imagenAang.alt="Imagen Aang";
+
+let imagenToph=new Image();
+imagenToph.src="imagenes/toph.jpg";
+imagenToph.alt="Imagen Toph";
+
+
+
+
+                    
+
 
 function iniciarJuego(){
     //Ocultamos la seleccion de ataque para que el usuario solo pueda ver la seleccion de jugador
@@ -29,7 +50,7 @@ function iniciarJuego(){
     sectionEligePersonaje.style.display="none";
 
     botonesIniciales=document.getElementById("botones-regla-jugar");
-    botonesIniciales.style.display="block";
+    botonesIniciales.style.display="flex";//debo hacerlo flex para poder aplicar props flex en mi css
 
 
     //Tenemos que esconder las otras partes del juego
@@ -86,22 +107,35 @@ function eligePersonaje(){
     let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque");
     sectionSeleccionarAtaque.style.display = 'block';
 
-    document.getElementById('zuko').addEventListener('click', function() {
-        asignacionPersonajeJugador('Zuko');
-    });
+    let imgZuko=document.getElementById('zuko');
+   // document.getElementById('zuko').addEventListener('click', function() {
+     //   asignacionPersonajeJugador('Zuko');
+    //);
 
-    document.getElementById('katara').addEventListener('click', function() {
-        asignacionPersonajeJugador('Katara');
-    });
+    imgZuko.src=imagenZuko.src;
+    imgZuko.alt=imagenZuko.alt;
+    imgZuko.addEventListener('click', function() {
+           asignacionPersonajeJugador('Zuko');});
 
-    document.getElementById('aang').addEventListener('click', function() {
-        asignacionPersonajeJugador('Aang');
-    });
+    let imgKatara=document.getElementById('katara');
+    imgKatara.src=imagenKatara.src;
+    imgKatara.alt=imagenKatara.alt;
+    imgKatara.addEventListener('click', function() {
+        asignacionPersonajeJugador('Katara');});
 
-    document.getElementById('toph').addEventListener('click', function() {
-        asignacionPersonajeJugador('Toph');
-    });
-    
+    let imgAang=document.getElementById('aang');
+    imgAang.src=imagenAang.src;
+    imgAang.alt=imagenAang.alt;
+    imgAang.addEventListener('click', function() {
+            asignacionPersonajeJugador('Aang');});
+
+    let imgToph=document.getElementById('toph');
+    imgToph.src=imagenToph.src;
+    imgToph.alt=imagenToph.alt;
+    imgToph.addEventListener('click', function() {
+                    asignacionPersonajeJugador('Toph');});
+
+
 }
 
 
@@ -116,6 +150,27 @@ function asignacionPersonajeJugador(personaje){
     let personajeJugador = document.getElementById('personaje-jugador');
     personajeJugador.innerHTML = personaje;
 
+    let imgTuPersonaje=document.getElementById('tu-personaje');
+
+    
+
+    if(personaje==='Zuko'){
+
+        imgTuPersonaje.src=imagenZuko.src;
+        imgTuPersonaje.alt=imagenZuko.alt;
+    } else if(personaje==='Katara'){
+        imgTuPersonaje.src=imagenKatara.src;
+        imgTuPersonaje.alt=imagenKatara.alt;
+    }else if(personaje==='Aang'){
+        imgTuPersonaje.src=imagenAang.src;
+        imgTuPersonaje.alt=imagenAang.alt;
+    }else if(personaje==='Toph'){
+        imgTuPersonaje.src=imagenToph.src;
+        imgTuPersonaje.alt=imagenToph.alt;
+    };
+
+
+
     seleccionarPersonajeEnemigo()
 }
 
@@ -124,10 +179,18 @@ function aleatorio(min, max){
 }
 
 
+
+
+
+
 function seleccionarPersonajeEnemigo(){
 
     let personajeEnemigo = document.getElementById('personaje-enemigo');
     let random = Math.floor(Math.random() * 4);
+
+    let imgPersonajeEnemigo=document.getElementById("personaje-contrincante")
+
+
     // let random = aleatorio(1, 4) // podria ser tambien asi utilizando la funcion aleatorio
 
     if(random === 0){
@@ -140,8 +203,31 @@ function seleccionarPersonajeEnemigo(){
         personajeEnemigo.innerHTML = 'Toph';
     }
 
+    if(personajeEnemigo.textContent==='Zuko'){
+
+        imgPersonajeEnemigo.src=imagenZuko.src;
+        imgPersonajeEnemigo.alt=imagenZuko.alt;
+    } else if(personajeEnemigo.textContent==='Katara'){
+        imgPersonajeEnemigo.src=imagenKatara.src;
+        imgPersonajeEnemigo.alt=imagenKatara.alt;
+    }else if(personajeEnemigo.textContent==='Aang'){
+        imgPersonajeEnemigo.src=imagenAang.src;
+        imgPersonajeEnemigo.alt=imagenAang.alt;
+    }else if(personajeEnemigo.textContent==='Toph'){
+        imgPersonajeEnemigo.src=imagenToph.src;
+        imgPersonajeEnemigo.alt=imagenToph.alt;
+    };
+
+
+
+
+
     ataque();
 }
+
+
+
+
 
 function ataque(){
 

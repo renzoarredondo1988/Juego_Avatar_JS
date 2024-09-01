@@ -17,15 +17,15 @@
     <div class="contenedor-h1">
         <h1>AVATAR 🔥💧🌱🌪️</h1> <!--Esto es estatico, NO cambia, el h1 se utiliza una vez-->
     </div>
-    
+
     <div id="botones-regla-jugar">
-        
+
         <div>
             <button type="button" id="reglas">REGLAS DEL JUEGO</button>
         </div>
-    
+
         <div id="boton-jugar">
-    
+
             <button type="button" id="jugar">JUGAR</button>
         </div>
     </div>
@@ -35,8 +35,8 @@
 
     <!-- ---------- Reglas -------------------------------->
     <div id="contenedor-reglas">
-    
-        <section>
+
+        <section id="reglas-juego">
             <h1>Reglas del juego</h1>
             <strong>1. Se debe elegir un personaje</strong>
             <br>
@@ -48,13 +48,13 @@
             <li>Patada le gana a Puño</li>
             <li>Barrida le gana a Barrida</li>
         </section>
-    
-    
+
+
         <div id="volver">
-    
+
             <button type="button" id="volver-inicio">VOLVER AL INICIO</button>
         </div>
-    
+
     </div>
 
 
@@ -68,85 +68,94 @@
         <div>
             <section id="seleccionar-personaje">
                 <h2>Elige tu Personaje</h2>
-    
+
         </div>
-    
+
         <div class="contenedor-padre-seleccion">
-    
+
             <div class="contenedor-seleccion">
-    
+
                 <figure>
-    
-    
-                    <img id="zuko" src="imagenes/zuko.png" alt="Personaje zuko">
+
+
+                    <img id="zuko" src="" alt="">
                     <figcaption>
                         <label for="zuko">Zuko</label>
                         <!--Esta etiqueta es para darle un indicador a los usuarios de que están seleccionando-->
-                        
+
                     </figcaption>
                 </figure>
-    
-    
+
+
                 <figure>
-                    <img id="katara" src="imagenes/katara.jpg" alt="Personaje Katara">
+                    <img id="katara" src="" alt="">
                     <figcaption>
                         <label for="katara">Katara</label>
-                     
+
                     </figcaption>
                 </figure>
-    
+
                 <figure>
-                    <img id="aang" src="imagenes/aang.jpg" alt="Personaje aang">
+                    <img id="aang" src="" alt="">
                     <figcaption>
                         <label for="aang">Aang</label>
-                        
+
                     </figcaption>
                 </figure>
-    
+
                 <figure>
-                    <img id="toph" src="imagenes/toph.jpg" alt="Personaje toph">
+                    <img id="toph" src="" alt="">
                     <figcaption>
                         <label for="toph">Toph</label>
-                        
+
                     </figcaption>
                 </figure>
-    
+
             </div>
-    
+
         </div>
-    
-   
+
+
         </section>
     </div>
 
 
-<!--Seccion lucha, vamos a hacer algunas modificaciones de enfoque-->
+    <!--Seccion lucha, vamos a hacer algunas modificaciones de enfoque-->
 
-    <section id="seleccionar-ataque">
+    <div id="seleccionar-ataque">
+        
 
         <div id="tu-vs-enemigo">
 
-            <figure >
-
-                <div id="tu-personaje">
-
-
-                </div>
+            <figure>
 
                 <figcaption id="tu-personaje-seleccionado">
 
                     <p><span id="personaje-jugador"></span></p>
+
                 </figcaption>
+
+                <img id="tu-personaje" alt="" src="">
+
+                <div class="vidas-restantes">
+
+                    <p>
+                        VIDAS RESTANTES
+                    </p>
+                    <p>
+                        <span id="vidas-jugador">3</span>
+                    </p>
+
+
+                </div>
+
+
+
 
             </figure>
 
 
-            <figure >
-
-                <div id="personaje-enemigo">
-
-
-                </div>
+            <figure>
 
                 <figcaption id="personaje-enemigo-seleccionado">
 
@@ -154,43 +163,52 @@
 
                 </figcaption>
 
+                <img id="personaje-contrincante" alt="" src="">
+
+                <div class="vidas-restantes">
+
+                    <p>
+                        VIDAS RESTANTES
+                    </p>
+                    <p>
+                        <span id="vidas-jugador">3</span>
+                    </p>
+
+
+                </div>
+
+
+
+
+
             </figure>
 
         </div>
 
 
 
+        <div>
 
 
+            <p>
+                <button id="boton-punio">Punio 👊🏻</button>
+                <button id="boton-patada">Patada 🦶🏻</button>
+                <button id="boton-barrida">Barrida 🧹</button>
+                <!-- <button id="boton-aire">Aire 🌪️</button> -->
+            </p>
 
+    
 
-
-
- 
-
-
-
-
-        <h2>Elige tu ataque</h2> <!--Se puede utilizar varias veces-->
-        <p>Tu personaje <span id="personaje-jugador"></span> Tiene <span id="vidas-jugador">3</span> vidas</p>
-        <!--Pero esto debe ser dinamico, necesitamos que cambie-->
-        <p>El personaje <span id="personaje-enemigo"></span> del enemigo tienen <span id="vidas-enemigo">3</span> vidas
-        </p> <!--Con la etiqueta spam vamos a modificar el 3 con JS-->
-        <p>
-            <button id="boton-punio">Punio 👊🏻</button>
-            <button id="boton-patada">Patada 🦶🏻</button>
-            <button id="boton-barrida">Barrida 🧹</button>
-            <!-- <button id="boton-aire">Aire 🌪️</button> -->
-        </p>
-    </section>
-
-    <section id="mensajes"> <!--Será un párrafo dinamico-->
+        <section id="mensajes"> <!--Será un párrafo dinamico-->
         <!-- <p>Tu personaje atacó con todo el poder del FUEGO, el personaje del enemigo atacó con el medio poder de la TIERRA - GANASTE 🎉</p> -->
-    </section>
+        </section>
 
-    <section id="reiniciar">
-        <button id="boton-reiniciar">Reiniciar</button>
-    </section>
+         <section id="reiniciar">
+            <button id="boton-reiniciar">Reiniciar</button>
+         </section>
+
+        </div>
+    </div>
 
 </body>
 

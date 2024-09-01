@@ -12,6 +12,116 @@ body {
     filter: brightness(1.5); 
 }
 
+/*Botones reglas-jugar*/
+
+#botones-regla-jugar {
+    display: flex;
+    flex-direction: column;/*alinea verticalmente los divs hijos*/
+    justify-content: center; /*Alinea los divs hijos verticalmente en el centro del contenedor padre*/
+    align-items: center; /*Idem anterior horizontalmente*/
+    width: 33vw;
+    margin: 0 auto;/*Ojo!! el auto se aplica vs el contenedor padre (body en este caso), toma distancias
+    automaticas, es decir, equidistante, vs los limites del contenedor padre)*/
+    height: 50vh;
+    /*background-color: blue;*/
+    gap: 50px;/*distancia entre contenedores divs hijos. Ojo! en JS debe ser flex y no block*/
+
+}
+
+   #botones-regla-jugar > div {/*el > solo aplica a los elementos hijos directos */
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Asegura que el contenedor hijo ocupe el ancho completo del contenedor padre */
+    height: 100%;
+    /*background-color: #00ff2a;*/
+    border: 1px solid red;
+    box-sizing: border-box;
+}
+
+    #botones-regla-jugar button {
+   
+    font-family: sans-serif; 
+    width: 100%;
+    height: 100%;
+    font-size: 3em; /*Tamaño relativo a la caja contenedora*/
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s, color 0.3s; /* Efecto de transición en el color de fondo y el texto */
+    background-color: rgba(179, 107, 0, 0.85); /* Color de fondo */
+    color: white; /* Color del texto */}
+
+   
+
+
+    #botones-regla-jugar button:hover {
+        background-color:rgb(78, 47, 1,0.85)
+        }
+
+
+/* Reglas de juego. Formateo de lo que se ve al clickear boton "REGLAS"*/
+
+    #contenedor-reglas {
+    
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(19, 18, 17, 0.85);
+            /* Color de contraste para el contenedor */
+
+            justify-content: center;
+            padding: 10px;
+            margin: 10px auto;
+            border-radius: 8px;
+            box-shadow: 0px 14px 16px rgba(0, 0, 0, 0.3);
+            max-width: 40vw;
+            /* Ancho máximo del contenedor ajustado */
+            height: auto;
+            
+            box-sizing: border-box;
+    
+    
+        }
+    
+    #reglas-juego {
+        background-color: rgba(179, 107, 0, 0.7);
+        padding: 10px;
+        margin: 10px auto;
+        border-radius: 8px;
+    }
+
+    #volver {
+
+        display: flex;
+        justify-content: center;
+        width: 100%%;
+       
+    }
+
+
+    #volver button{
+        font-family: sans-serif; 
+       
+        font-size: 1em; /*Tamaño relativo a la caja contenedora*/
+        cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+        transition: background-color 0.3s, color 0.3s; /* Efecto de transición en el color de fondo y el texto */
+        background-color: rgba(179, 107, 0, 0.85); /* Color de fondo */
+        color: white; /* Color del texto */
+       
+    
+    
+    }
+    
+       
+    
+    
+    #volver button:hover {
+            background-color:rgb(78, 47, 1,0.85)
+            }
+    
+                                
+   
+    
+
+
+
 h1{
 
     font-size: 1.5rem; 
@@ -46,7 +156,7 @@ h2{
 
 }
 
-nav {
+.contenedor-h1 > div {
     display: flex;
     align-items: center; 
     justify-content: center; 
@@ -55,20 +165,12 @@ nav {
     padding: 0 20px; 
 }
 
-.contenedor-reglas{
-
-    background-color: rgba(85, 87, 79, 0.85); /* Color de contraste para el contenedor */
-    padding: 10px; 
-    margin: 10px auto; 
-    border-radius: 8px; 
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); 
-    max-width: 30%; /* Ancho máximo del contenedor ajustado */
-    height: auto; 
-    text-align: center; 
-    box-sizing: border-box; 
 
 
-}
+
+
+
+
 
 
 
