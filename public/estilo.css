@@ -12,6 +12,54 @@ body {
     filter: brightness(1.5); 
 }
 
+
+/*Titulo del juego a corregir*/
+h1{
+
+    font-size: 1.5rem; 
+    text-align: center;
+    color: #0f0101;
+    padding: 10px; 
+    margin: 0;
+}
+
+h2{
+
+    font-size: 1.5rem; 
+    text-align: center;
+    color: #0f0101;
+    padding: 10px; 
+    margin: 0;
+}
+
+
+.contenedor-h1{
+
+    background-color: rgba(85, 87, 79, 0.85); /* Color de contraste para el contenedor */
+    padding: 10px; 
+    margin: 10px auto; 
+    border-radius: 8px; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); 
+    max-width: 30%; /* Ancho máximo del contenedor ajustado */
+    height: auto; 
+    text-align: center; 
+    box-sizing: border-box; 
+
+}
+
+.contenedor-h1 > div {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    height: 5vh; 
+    
+    padding: 0 20px; 
+}
+
+
+
+
+
 /*Botones reglas-jugar*/
 
 #botones-regla-jugar {
@@ -91,7 +139,7 @@ body {
 
         display: flex;
         justify-content: center;
-        width: 100%%;
+        width: 100%;
        
     }
 
@@ -118,116 +166,97 @@ body {
     
                                 
    
-    
+/*Formateo parte de Elegir jugador*/
 
+#elige-personaje{
 
-
-h1{
-
-    font-size: 1.5rem; 
-    text-align: center;
-    color: #0f0101;
-    padding: 10px; 
-    margin: 0;
-}
-
-h2{
-
-    font-size: 1.5rem; 
-    text-align: center;
-    color: #0f0101;
-    padding: 10px; 
-    margin: 0;
-}
-
-
-
-.contenedor-h1{
-
-    background-color: rgba(85, 87, 79, 0.85); /* Color de contraste para el contenedor */
-    padding: 10px; 
-    margin: 10px auto; 
-    border-radius: 8px; 
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); 
-    max-width: 30%; /* Ancho máximo del contenedor ajustado */
-    height: auto; 
-    text-align: center; 
-    box-sizing: border-box; 
-
-}
-
-.contenedor-h1 > div {
     display: flex;
-    align-items: center; 
-    justify-content: center; 
-    height: 5vh; 
+    flex-direction: column;
+    background-color: blue;
+    width: 80vw;
+    margin: 0 auto; /*sin margen arriba y abajo, pero centrado en el eje x*/
+
     
-    padding: 0 20px; 
+
 }
 
+#seleccionar-personaje h2{
+
+    
+    font-family: sans-serif; 
+    font-size: 1.5em;
+    background-color: rgba(179, 107, 0, 0.8);
+    margin: 0 auto;
+    width: 50%;
+    align-items: center;
+    
+    }
 
 
 
+/* Vamos a settear los valores de seleccion del personaje*/
+
+
+    
+    .contenedor-seleccion{
+    
+        display: flex;
+        width: 70%;
+        align-items: stretch;/*ajusta el elemento al ancho del espacio definido*/
+        justify-content: space-between;/*separa los elementos equitativamente*/
+        gap: 15px;
+        background-color: gray;
+        box-sizing: border-box;
+        padding: 15px;
+        flex-wrap: wrap;/*alinea en varias lineas el flex cuando no da el ancho de pantalla*/
+        margin: 0 auto;
+    }
+    
+    .contenedor-seleccion figure{
+    
+    
+        position: relative;/*referencia al contenedor hijo para que se posicione dentro de el*/
+        flex: 1;
+        margin: 0;
+        box-sizing: border-box;
+        
+        
+        
+    }
+    
+    .contenedor-seleccion img{
+    
+        position: absolute;/*establece una posicion absoluta dentro del contenedor mas cercano*/
+        top: 0;
+        left: 0;
+        width: 100%;
+        aspect-ratio: 1/1;/*Con esto defino la relacion de la imagen en funcion de su ancho (cuadrado)*/
+        height: auto;
+        object-fit: cover;
+        border-radius: 10%;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .contenedor-seleccion img:hover{
+
+        transform: scale(1.1); /* Aumenta ligeramente el tamaño de la imagen */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añade una sombra para destacar */
+
+    }
+    
+    .contenedor-seleccion figcaption{
+    
+        position:relative;
+        padding: 10px;
+        text-align: center;
+        background-color:  rgba(179, 107, 0, 0.8);
+        margin-top: 100%;
+    }
 
 
 
-
-
-
-
-#seleccionar-personaje {
-    background-color: rgba(85, 87, 79, 0.85); 
-    padding: 20px; 
-    border-radius: 8px; 
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
-    width: 50%; 
-    margin: 0 auto; 
-    text-align: center; 
-}
-
-#seleccionar-personaje h2 {
-    font-size: 1.8rem; 
-    color: #333; 
-    margin-bottom: 15px; 
-}
-
-.personajes {
-    display: flex; 
-    justify-content: center; 
-    flex-wrap: wrap; 
-    gap: 20px; 
-    margin: 0 auto; 
-}
-
-.personajes label {
-    display: flex; 
-    align-items: center; 
-    font-size: 1rem; 
-}
-
-.personajes input[type="radio"] {
-    margin-right: 10px; 
-}
-
-#boton-personaje {
-    display: block; 
-    margin: 20px auto; 
-    padding: 10px 20px; 
-    font-size: 1rem; 
-    background-color: #007bff; 
-    color: #fff; 
-    border: none; 
-    border-radius: 4px; 
-    cursor: pointer; 
-}
-
-#boton-personaje:hover {
-    background-color: #0056b3;
-}
-
-
-
-
+/*Parte del ataque*/
 
 
 
@@ -235,153 +264,91 @@ h2{
 
 
 #seleccionar-ataque {
+    display: flex;
     background-color: rgba(85, 87, 79, 0.85);
     padding: 20px; 
     border-radius: 8px; 
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
-    width: 50%; 
+    width: 100%; 
     margin: 20px auto; 
     text-align: center; 
+    gap: 5vh;
 }
 
-#seleccionar-ataque h2 {
-    font-size: 1.8rem; 
-    color: #333; 
-    margin-bottom: 15px; 
+#tu-vs-enemigo{
+
+background-color: blueviolet;
+display: flex;
+flex-wrap: wrap;
+box-sizing: border-box;
+flex: 4;
+gap: 4vh;
+
 }
 
-#seleccionar-ataque p {
-    font-size: 1rem; 
-    color: #333; 
-    margin: 10px 0; 
-}
+#tu-vs-enemigo figure {
 
-#seleccionar-ataque button {
-    display: block; 
-    margin: 20px auto; 
-    padding: 10px 20px; 
-    font-size: 1rem; 
-    background-color: #007bff; 
-    color: #fff; 
-    border: none; 
-    border-radius: 4px; 
-    cursor: pointer; 
-}
+    flex:1 1 30%;
+    
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: auto;
 
-#seleccionar-ataque button:hover {
-    background-color: #0056b3; 
+
 }
 
 
-#imagenes, 
-#reiniciar {
-    background-color: rgba(85, 87, 79, 0.85); 
+#tu-vs-enemigo img {
+
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+
+
+}
+
+
+#tu-vs-enemigo figcaption{
+
+    font-family: sans-serif; 
+    font-size: 1.5em;
+    background-color: rgba(179, 107, 0, 0.8);
+    margin: 0 auto;
+    width: 50%;
+    align-items: center;
+
+
+
+}
+
+.vidas-restantes{
+
+    font-family: sans-serif; 
+    font-size: 1.5em;
+    background-color: rgba(179, 107, 0, 0.8);
+    margin: 0 auto;
+    align-items: center;
+
+
+
+}
+
+
+#tipo-ataque {
+    display: flex;
+    flex-direction: column; /* Si quieres que los botones estén en columna */
+    background-color: rgba(85, 87, 79, 0.85);
     padding: 20px; 
     border-radius: 8px; 
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 50%; 
-    margin: 20px auto; 
-    text-align: left; 
-}
-
-#imagenes h2, 
-#reiniciar h2 {
-    font-size: 1.8rem; 
-    color: #333; 
-    margin-bottom: 15px; 
-}
-
-#imagenes p, 
-#reiniciar p {
-    font-size: 1rem; 
-    color: #333; 
-    margin: 10px 0; 
-}
-
-#imagenes button, 
-#reiniciar button {
-    display: block; 
-    margin: 20px auto; 
-    padding: 10px 20px; 
-    font-size: 1rem; 
-    background-color: #007bff; 
-    color: #fff; 
-    border: none; 
-    border-radius: 4px; 
-    cursor: pointer; 
-}
-
-#imagenes button:hover, 
-#reiniciar button:hover {
-    background-color: #0056b3; 
-}
-
-p{
-
-    font-size: 1.5rem; 
-    text-align: center;
-    color: #0f0101;
-    padding: 10px; 
-    margin: 0;
-
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    flex: 6; /* Ocupa el 60% del contenedor padre */
 }
 
 
 
 
-/* Vamos a settear los valores de seleccion del personaje*/
-
-.contenedor-padre-seleccion{
-
-display: flex;
-justify-content: center;
-width: 100%;
-max-width: 100%;
-
-}
-
-.contenedor-seleccion{
-
-    display: flex;
-    width: 70%;
-    align-items: stretch;/*ajusta el elemento al ancho del espacio definido*/
-    justify-content: space-between;/*separa los elementos equitativamente*/
-    gap: 15px;
-    background-color: gray;
-    box-sizing: border-box;
-    margin: 2px;
-    flex-wrap: wrap;
-}
-
-.contenedor-seleccion figure{
 
 
-position: relative;/*referencia al contenedor hijo para que se posicione dentro de el*/
-    flex: 1;
-    margin: 0;
-    box-sizing: border-box;
-    
-    
-    
-}
 
-.contenedor-seleccion img{
-
-    position: absolute;/*establece una posicion absoluta dentro del contenedor mas cercano*/
-    top: 0;
-    left: 0;
-    width: 100%;
-    aspect-ratio: 1/1;/*Con esto defino la relacion de la imagen en funcion de su ancho (cuadrado)*/
-    height: auto;
-    object-fit: cover;
-}
-
-.contenedor-seleccion figcaption{
-
-    position:relative;
-    padding: 10px;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    margin-top: 100%;
-}
 

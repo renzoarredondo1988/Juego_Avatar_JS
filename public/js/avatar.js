@@ -95,7 +95,7 @@ function botonJuego(){
 function Jugar(){
     botonesIniciales.style.display="none";
   //  sectionEligePersonaje=document.getElementById("elige-personaje");
-    sectionEligePersonaje.style.display="block";
+    sectionEligePersonaje.style.display="flex";
     eligePersonaje();
 
 
@@ -104,8 +104,7 @@ function Jugar(){
 function eligePersonaje(){
 
 
-    let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque");
-    sectionSeleccionarAtaque.style.display = 'block';
+    
 
     let imgZuko=document.getElementById('zuko');
    // document.getElementById('zuko').addEventListener('click', function() {
@@ -232,6 +231,8 @@ function seleccionarPersonajeEnemigo(){
 function ataque(){
 
     sectionEligePersonaje.style.display="none";
+    let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque");
+    sectionSeleccionarAtaque.style.display = 'flex';
 
     let botonPunio = document.getElementById('boton-punio');
     botonPunio.addEventListener('click', ataquePunio);
