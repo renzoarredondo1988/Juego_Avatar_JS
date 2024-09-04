@@ -7,40 +7,30 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-
-    
     filter: brightness(1.5); 
 }
 
-
+/*Fuente titulo*/
 /*Titulo del juego a corregir*/
 h1{
 
-    font-size: 1.5rem; 
+    font-family: "Honk";
+    font-size: 3rem; 
     text-align: center;
     color: #0f0101;
     padding: 10px; 
     margin: 0;
 }
 
-h2{
-
-    font-size: 1.5rem; 
-    text-align: center;
-    color: #0f0101;
-    padding: 10px; 
-    margin: 0;
-}
 
 
 .contenedor-h1{
 
-    background-color: rgba(85, 87, 79, 0.85); /* Color de contraste para el contenedor */
+    
     padding: 10px; 
     margin: 10px auto; 
-    border-radius: 8px; 
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); 
-    max-width: 30%; /* Ancho máximo del contenedor ajustado */
+    border-radius: 8px;  
+    max-width: 40%; /* Ancho máximo del contenedor ajustado */
     height: auto; 
     text-align: center; 
     box-sizing: border-box; 
@@ -51,8 +41,7 @@ h2{
     display: flex;
     align-items: center; 
     justify-content: center; 
-    height: 5vh; 
-    
+    height: 5vh;  
     padding: 0 20px; 
 }
 
@@ -70,7 +59,7 @@ h2{
     width: 33vw;
     margin: 0 auto;/*Ojo!! el auto se aplica vs el contenedor padre (body en este caso), toma distancias
     automaticas, es decir, equidistante, vs los limites del contenedor padre)*/
-    height: 50vh;
+    height: 33vh;
     /*background-color: blue;*/
     gap: 50px;/*distancia entre contenedores divs hijos. Ojo! en JS debe ser flex y no block*/
 
@@ -82,20 +71,19 @@ h2{
     width: 100%; /* Asegura que el contenedor hijo ocupe el ancho completo del contenedor padre */
     height: 100%;
     /*background-color: #00ff2a;*/
-    border: 1px solid red;
     box-sizing: border-box;
 }
 
     #botones-regla-jugar button {
    
-    font-family: sans-serif; 
+    font-family: Matemasie;
     width: 100%;
     height: 100%;
     font-size: 3em; /*Tamaño relativo a la caja contenedora*/
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
     transition: background-color 0.3s, color 0.3s; /* Efecto de transición en el color de fondo y el texto */
     background-color: rgba(179, 107, 0, 0.85); /* Color de fondo */
-    color: white; /* Color del texto */}
+    color: rgb(0, 0, 0); /* Color del texto */}
 
    
 
@@ -111,15 +99,12 @@ h2{
     
             display: flex;
             flex-direction: column;
-            background-color: rgba(19, 18, 17, 0.85);
-            /* Color de contraste para el contenedor */
-
             justify-content: center;
             padding: 10px;
             margin: 10px auto;
             border-radius: 8px;
             box-shadow: 0px 14px 16px rgba(0, 0, 0, 0.3);
-            max-width: 40vw;
+            max-width: 55vw;
             /* Ancho máximo del contenedor ajustado */
             height: auto;
             
@@ -129,11 +114,32 @@ h2{
         }
     
     #reglas-juego {
-        background-color: rgba(179, 107, 0, 0.7);
+        background-color: rgba(179, 107, 0, 0.9);
         padding: 10px;
         margin: 10px auto;
         border-radius: 8px;
     }
+
+    #reglas-juego h2{
+
+        font-family: Matemasie;
+        font-size: 2rem; 
+        text-align: center;
+        color: #0f0101;
+        padding: 10px; 
+        margin: 0;
+    }
+
+    #reglas-juego p,li{
+
+        font-family: Matemasie;
+        font-size: 1.5rem; 
+        text-align: center;
+        color: #0f0101;
+        padding: 10px; 
+        margin: 0;
+    }
+
 
     #volver {
 
@@ -145,13 +151,13 @@ h2{
 
 
     #volver button{
-        font-family: sans-serif; 
-       
-        font-size: 1em; /*Tamaño relativo a la caja contenedora*/
+        
+        font-family:  Matemasie; 
+        font-size: 1.5em; /*Tamaño relativo a la caja contenedora*/
         cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
         transition: background-color 0.3s, color 0.3s; /* Efecto de transición en el color de fondo y el texto */
         background-color: rgba(179, 107, 0, 0.85); /* Color de fondo */
-        color: white; /* Color del texto */
+        color: rgb(0, 0, 0); /* Color del texto */
        
     
     
@@ -172,19 +178,18 @@ h2{
 
     display: flex;
     flex-direction: column;
-    background-color: blue;
+    
     width: 80vw;
     margin: 0 auto; /*sin margen arriba y abajo, pero centrado en el eje x*/
 
-    
-
 }
+
 
 #seleccionar-personaje h2{
 
     
-    font-family: sans-serif; 
-    font-size: 1.5em;
+    font-family: Matemasie;  
+    font-size: 2em;
     background-color: rgba(179, 107, 0, 0.8);
     margin: 0 auto;
     width: 50%;
@@ -205,7 +210,6 @@ h2{
         align-items: stretch;/*ajusta el elemento al ancho del espacio definido*/
         justify-content: space-between;/*separa los elementos equitativamente*/
         gap: 15px;
-        background-color: gray;
         box-sizing: border-box;
         padding: 15px;
         flex-wrap: wrap;/*alinea en varias lineas el flex cuando no da el ancho de pantalla*/
@@ -247,10 +251,11 @@ h2{
     
     .contenedor-seleccion figcaption{
     
+        font-family: Matemasie;
         position:relative;
         padding: 10px;
         text-align: center;
-        background-color:  rgba(179, 107, 0, 0.8);
+        background-color:  rgba(179, 107, 0, 0.9);
         margin-top: 100%;
     }
 
@@ -317,6 +322,7 @@ gap: 4vh;
     margin: 0 auto;
     width: 50%;
     align-items: center;
+   
 
 
 
@@ -335,7 +341,9 @@ gap: 4vh;
 }
 
 
-#tipo-ataque {
+/*---------------- Parte dedicada al tipo de ataque ---------------------------------*/
+
+#tipo-ataque-padre {
     display: flex;
     flex-direction: column; /* Si quieres que los botones estén en columna */
     background-color: rgba(85, 87, 79, 0.85);
@@ -345,8 +353,65 @@ gap: 4vh;
     flex: 6; /* Ocupa el 60% del contenedor padre */
 }
 
+#tipo-ataque {
+
+display: flex;
+flex-wrap: wrap;
+box-sizing: border-box;
+padding: 2vh;
+gap: 2vh;
+
+}
+
+#tipo-ataque figure{
+
+    flex:0 1 20%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    padding: auto;
+    
+    
 
 
+}
+
+#tipo-ataque img{
+
+    width: 100%;
+    aspect-ratio: 1.1/1;
+    object-fit: fill;
+    border-radius: 10%;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    
+}
+
+#tipo-ataque img:hover{
+
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño de la imagen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Añade una sombra para destacar */
+
+}
+
+#tipo-ataque figcaption{
+
+    text-align: center;
+    margin-top: 2vh;
+
+}
+
+
+
+
+
+h2{
+    font-family: Matemasie;
+    font-size: 1.5rem; 
+    text-align: center;
+    color: #0f0101;
+    padding: 10px; 
+    margin: 0;
+}
 
 
 

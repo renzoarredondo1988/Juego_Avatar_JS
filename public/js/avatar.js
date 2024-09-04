@@ -29,6 +29,19 @@ let imagenToph=new Image();
 imagenToph.src="imagenes/toph.jpg";
 imagenToph.alt="Imagen Toph";
 
+let imagenPatada=new Image();
+imagenPatada.src="imagenes/patada.png";
+imagenPatada.alt="Imagen patada";
+
+let imagenBarrida=new Image();
+imagenBarrida.src="imagenes/barrida.png";
+imagenBarrida.alt="Imagen barrida";
+
+let imagenPunio=new Image();
+imagenPunio.src="imagenes/punio.png";
+imagenPunio.alt="Imagen Punio";
+
+
 
 
 
@@ -234,6 +247,26 @@ function ataque(){
     let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque");
     sectionSeleccionarAtaque.style.display = 'flex';
 
+    let imgPunio=document.getElementById('punio');
+    imgPunio.src=imagenPunio.src;
+    imgPunio.alt=imagenPunio.alt;
+    imgPunio.addEventListener('click', ataquePunio);
+
+    let imgPatada=document.getElementById('patada');
+    imgPatada.src=imagenPatada.src;
+    imgPatada.alt=imagenPatada.alt;
+    imgPatada.addEventListener('click', ataquePatada);
+
+    let imgBarrida=document.getElementById('barrida');
+    imgBarrida.src=imagenBarrida.src;
+    imgBarrida.alt=imagenBarrida.alt;
+    imgBarrida.addEventListener('click', ataqueBarrida);
+
+
+
+
+
+
     let botonPunio = document.getElementById('boton-punio');
     botonPunio.addEventListener('click', ataquePunio);
     let botonPatada = document.getElementById('boton-patada');
@@ -310,6 +343,8 @@ function fight(){
         spanVidasJugador.innerHTML = vidasJugador;
     }
 
+
+
     //Revisamos las vidas despues de un COMBATE o Fight!!
     checkVidas()
 
@@ -347,6 +382,7 @@ function checkVidas(){
 
 function crearMensaje(resultado){
     let seccionMensaje = document.getElementById('mensajes');//llamamos a la seccion por el ID
+    seccionMensaje.innerHTML = '';
     let parrafo = document.createElement('p');
     parrafo.innerHTML = `Tu personaje atacó con todo el poder del ${ataqueJugador}, el personaje del enemigo atacó con el poder de la ${ataqueEnemigo} - ${resultado} la ronda 🎉`;
     seccionMensaje.appendChild(parrafo);

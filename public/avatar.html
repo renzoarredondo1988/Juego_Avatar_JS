@@ -6,6 +6,25 @@
     <title>LA LEYENDA DE AANG: AVATAR</title>
     <link rel="stylesheet" href="estilo.css">
     <script src="./js/avatar.js"></script> <!--Lo ponemos aca para que cargue toda la pagina y esto corra-->
+
+    <!-- Fuentes a usar-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Matemasie&display=swap" rel="stylesheet">
+
+  
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
+
+ 
+    <link href="https://fonts.googleapis.com/css2?family=Honk&family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Orbitron:wght@400..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+
+
 </head>
 
 
@@ -15,7 +34,9 @@
 
     <!--....................... Titulo del juego ..................-->
     <div class="contenedor-h1">
-        <h1>AVATAR 🔥💧🌱🌪️</h1> <!--Esto es estatico, NO cambia, el h1 se utiliza una vez-->
+        <img src="imagenes/titulo.png" alt="titulo">
+        <h1>LA LEYENDA DE AVATAR</h1> <!--Esto es estatico, NO cambia, el h1 se utiliza una vez-->
+       
     </div>
 
     <div id="botones-regla-jugar">
@@ -37,13 +58,12 @@
     <div id="contenedor-reglas">
 
         <section id="reglas-juego">
-            <h1>Reglas del juego</h1>
-            <strong>1. Se debe elegir un personaje</strong>
-            <br>
-            <strong>2. Una vez seleccionado tu personaje selecciona los 3 tipos de ataques disponibles</strong>
-            <br>
-            <hr>
-            <strong>Reglamento de golpes:</strong>
+            <h2>Reglas del juego</h2>
+            <p>1. Se debe elegir un personaje</p>
+            
+            <p>2. Una vez seleccionado tu personaje selecciona los 3 tipos de ataques disponibles</p>
+            
+            <h2>Reglamento de golpes:</h2>
             <li>Puño le gana a Barrida</li>
             <li>Patada le gana a Puño</li>
             <li>Barrida le gana a Barrida</li>
@@ -52,7 +72,7 @@
 
         <div id="volver">
 
-            <button type="button" id="volver-inicio">VOLVER AL INICIO</button>
+            <button type="button" id="volver-inicio"><p>VOLVER AL INICIO</p></button>
         </div>
 
     </div>
@@ -67,7 +87,7 @@
     <div id="elige-personaje">
         <div>
             <section id="seleccionar-personaje">
-                <h2>Elige tu Personaje</h2>
+                <h2>ELIGE TU PERSONAJE</h2>
 
         </div>
 
@@ -176,7 +196,7 @@
                         VIDAS RESTANTES
                     </p>
                     <p>
-                        <span id="vidas-jugador">3</span>
+                        <span id="vidas-enemigo">3</span>
                     </p>
 
 
@@ -192,18 +212,39 @@
 
 
 
+        <!--Esta seccion es referida exclusivamente a los ataques!!-->
+    <div id="tipo-ataque-padre">
+
+        <p>ELIGE TU ATAQUE</p>
         <div id="tipo-ataque">
 
+            
+            <figure>
+                <img id="punio" src="" alt="">
 
-            <p>
-                <button id="boton-punio">Punio 👊🏻</button>
-                <button id="boton-patada">Patada 🦶🏻</button>
-                <button id="boton-barrida">Barrida 🧹</button>
-                <!-- <button id="boton-aire">Aire 🌪️</button> -->
-            </p>
+                <figcaption><p>Puño</p> </figcaption>
+
+            </figure>
+
+            <figure>
+                <img id="patada" src="" alt="">
+
+                <figcaption>Patada</figcaption>
+
+            </figure>
+
+            <figure>
+                <img id="barrida" src="" alt="">
+
+                <figcaption>Barrida</figcaption>
+
+            </figure>
+
+        </div> 
+           
 
 
-
+        <div id="mensajes-padre">
             <section id="mensajes"> <!--Será un párrafo dinamico-->
                 <!-- <p>Tu personaje atacó con todo el poder del FUEGO, el personaje del enemigo atacó con el medio poder de la TIERRA - GANASTE 🎉</p> -->
             </section>
@@ -213,6 +254,8 @@
             </section>
 
         </div>
+
+    </div>
     </div>
 
 </body>
